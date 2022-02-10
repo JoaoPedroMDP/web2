@@ -1,0 +1,21 @@
+.title {
+  font-family: verdana;
+  color: blue;
+}
+
+.address {
+  font-family: Arial, sans-serif;
+  color: black;
+  font-size: small;
+}
+
+td,
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+a {
+  text-decoration: none;
+  margin: 5px;
+}
