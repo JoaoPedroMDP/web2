@@ -54,25 +54,26 @@ public class SEPT extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            // Link sept.css, located  in web/css
             out.println("<link rel=\"stylesheet\" href=\"css/sept.css\">");
             out.println("<title>SEPT</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<div class=\"container\">");
             out.println("<h1 class=\"title\">Setor de Educação Profissional e Tecnológica</h1>");
             out.println("<h2 class=\"address\">Rua Dr. Alcides Vieira Arcoverde, 1225</h2>");
-
-            // cria um array contendo todas as keys em cursos
             String[] coursesNames = courses.keySet().toArray(new String[courses.size()]);
             out.println("<table class=\"courses\">");
             for( int i = 0; i < coursesNames.length; i++) {
                 out.println("<tr>");
                 out.println("<td class=\"course\">" + coursesNames[i] + "</td>");
                 String link = courses.get(coursesNames[i]);
-                out.println("<td><a href="+ link +">" + link + "</a></td>");
+                out.println("<td><a href="+ link +"> Página </a></td>");
                 out.println("</tr>");
             }
+
             out.println("</table>");
+            out.println("<a href=" + request.getContextPath() + "/MeuTADS.jsp><button>Meu TADS</button></a>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }

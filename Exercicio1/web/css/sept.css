@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-items: center;
+  align-items: center;
+}
+
 .title {
   font-family: verdana;
   color: blue;
@@ -13,6 +20,7 @@ td,
 table {
   border: 1px solid black;
   border-collapse: collapse;
+  width: fit-content;
 }
 
 a {
