@@ -1,6 +1,6 @@
 # Adicionado por mim
 EmAula
-
+*/.idea
 ##############################
 ## Java
 ##############################
@@ -85,3 +85,4 @@ nb-configuration.xml
 ## OS X
 ##############################
 .DS_Store
+/Exercicio2/nbproject/private/
