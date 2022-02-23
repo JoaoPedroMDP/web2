@@ -1,6 +1,7 @@
 # Adicionado por mim
 EmAula
-*/.idea
+.idea
+nbproject
 ##############################
 ## Java
 ##############################
