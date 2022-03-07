@@ -1,0 +1,13 @@
+.enter {
+  max-width: 100px;
+}
+
+.form {
+  align-items: flex-end;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  align-self: flex-start;
+}

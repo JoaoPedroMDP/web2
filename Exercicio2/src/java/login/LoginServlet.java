@@ -47,7 +47,8 @@ public class LoginServlet extends HttpServlet {
             out.println("<h1>Login efetuado com sucesso</h1>");
             out.println("<a href=\"/Exercicio2/PortalServlet\">Portal</a>");
         }else{
-            out.println("<h1>Ih</h1>");
+            out.println("<h1>Problema ao logar</h1>");
+            out.println("<a href=\"/index.html\">Portal</a>");
         }
         out.println("</body>");
     }

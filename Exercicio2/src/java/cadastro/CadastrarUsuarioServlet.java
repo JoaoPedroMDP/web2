@@ -6,17 +6,15 @@ package cadastro;
 
 import login.Usuario;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.Null;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -24,6 +22,8 @@ import javax.validation.constraints.Null;
  */
 @WebServlet(name = "CadastrarUsuarioServlet", urlPatterns = {"/CadastrarUsuarioServlet"})
 public class CadastrarUsuarioServlet extends HttpServlet {
+
+    private List<Usuario> users;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,8 +34,10 @@ public class CadastrarUsuarioServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void processRequest(
+            HttpServletRequest request,
+            HttpServletResponse response
+    )throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Usuario user = new Usuario(
                 request.getParameter("name"),
@@ -43,13 +45,12 @@ public class CadastrarUsuarioServlet extends HttpServlet {
                 request.getParameter("password")
         );
 
-        List<Usuario> userList = (ArrayList<Usuario>) request.getAttribute("list");
-        if(userList == null){
-            userList = new ArrayList<Usuario>();
+        if(this.users == null){
+            this.users = new ArrayList<>();
         }
 
-        userList.add(user);
-        request.setAttribute("list", userList);
+        this.users.add(user);
+        request.setAttribute("list", users);
 
         RequestDispatcher view = request.getRequestDispatcher("/PortalServlet");
         view.forward(request, response);

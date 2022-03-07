@@ -87,7 +87,7 @@ public class PortalServlet extends HttpServlet {
                         out.println("</li>");
                     }
                 out.println("</ul>");
-                out.println("<a href=\"/Exercicio2/LogoutServlet\"></a>");
+                out.println("<a href=\"/Exercicio2/LogoutServlet\"><button class=\"btn btn-danger\">Logout</button></a>");
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");
